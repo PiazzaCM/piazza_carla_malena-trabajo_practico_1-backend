@@ -1,5 +1,6 @@
 //requerimos los controles de productos
 const { obtenerProductos, crearProducto, editarProducto, eliminarProducot } = require('../controllers/producto.controller');
+const validarUsuario = require('../middlewares/validarUsuario');
 
 const router = require('express').Router();
 
