@@ -11,5 +11,15 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "name": "tpBackend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
