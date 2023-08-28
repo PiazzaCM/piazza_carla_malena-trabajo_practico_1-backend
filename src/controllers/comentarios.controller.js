@@ -5,9 +5,9 @@ const ctrl = {}
 ctrl.obtenerComentarios = async (req, res) => {
 
     try {
-        const comentario = await Comentario.findAll();
+        const comentarios = await Comentario.findAll();
 
-        return res.json(comentario)
+        return res.json(comentarios)
     } catch (error) {
         console.log(error);
         return res.status(400).json({
@@ -15,6 +15,37 @@ ctrl.obtenerComentarios = async (req, res) => {
         })
     }
 }
+
+
+ctrl.obtenerComentario = async (req, res)=>{
+
+    const id = req.params.id
+
+    try {
+        const comentario = await Comentario.findOne({
+            where: {
+                id,
+                estado: true
+            }
+        })
+
+
+        if(!comentario){
+            return res.json({
+                mensaje: 'No hay comentarios'
+            })
+        }
+        
+        res.json(comentario)
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje: 'Error al solicitar el comentario'
+        })
+    }
+
+}
+
 
 //crear
 ctrl.crearComentario = async (req, res) => {

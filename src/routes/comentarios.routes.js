@@ -1,11 +1,13 @@
 //requerimos los controles de comentarios
-const { obtenerComentarios, crearComentario, editarComentario, eliminarComentario } = require('../controllers/comentarios.controller');
+const { obtenerComentarios, crearComentario, editarComentario, eliminarComentario, obtenerComentario } = require('../controllers/comentarios.controller');
 const validarUsuario = require('../middlewares/validarUsuario');
 const comentarioValida = require('../validator/comentario.valida');
 
 const router = require('express').Router();
-//obetener
+//obtener comentarios
 router.get('/comentarios', obtenerComentarios);
+//obtener comentario
+router.get('/comentarios/:id', obtenerComentarios);
 //enviar
 router.post('/comentarios/:productoId', [validarUsuario, comentarioValida], crearComentario);
 //actualizar

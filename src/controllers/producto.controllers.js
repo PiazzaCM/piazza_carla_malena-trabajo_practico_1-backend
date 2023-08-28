@@ -4,7 +4,7 @@ const ctrl = {}
 
 
 //controladores basicos
-//obtener
+//obtener productos
 ctrl.obtenerProductos = async (req, res) => {
 
     try {
@@ -18,6 +18,38 @@ ctrl.obtenerProductos = async (req, res) => {
         })
     }
 }
+
+//obtener producto
+ctrl.obtenerProducto = async (req, res)=>{
+
+    const id = req.params.id
+    
+
+    try {
+        const producto = await Producto.findOne({
+            where: {
+                id,
+                estado: true
+            }
+        })
+
+
+        if(!producto){
+            return res.json({
+                mensaje: 'No hay producto'
+            })
+        }
+        
+        res.json(producto)
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje: 'Error al solicitar el producto'
+        })
+    }
+
+}
+
 
 //crear
 ctrl.crearProducto = async (req, res) => {
@@ -64,7 +96,7 @@ ctrl.editarProducto = async (req, res) => {
 }
 
 //eliminar
-ctrl.eliminarProducot = async (req, res) => {
+ctrl.eliminarProducto = async (req, res) => {
     const id = req.userId
     const idProduct = req.params.id
 

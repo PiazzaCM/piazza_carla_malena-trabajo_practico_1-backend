@@ -1,19 +1,21 @@
 //requerimos los controles de productos
-const { obtenerProductos, crearProducto, editarProducto, eliminarProducot } = require('../controllers/producto.controllers');
+const { obtenerProductos, crearProducto, editarProducto, eliminarProducto, obtenerProducto } = require('../controllers/producto.controllers');
 const validarUsuario = require('../middlewares/validarUsuario');
 const productoValida = require('../validator/producto.valida');
 const router = require('express').Router();
 
 //creamos las rutas basicas
 
-//obetener
+//obtener
 router.get('/productos', obtenerProductos);
+//obtener un producto
+router.get('/productos/:id', obtenerProductos);
 //enviar
 router.post('/productos', [validarUsuario, productoValida ], crearProducto);
 //editar
 router.put('/productos/:id',[validarUsuario, productoValida ], editarProducto);
 //eliminar
-router.delete('/productos/:id', validarUsuario, eliminarProducot);
+router.delete('/productos/:id', validarUsuario, eliminarProducto);
 
 
 //exportamos
