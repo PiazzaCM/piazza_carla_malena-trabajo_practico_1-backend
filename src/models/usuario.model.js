@@ -1,5 +1,6 @@
 //requerimos la bd
 const { sequelize, DataTypes } = require("../db/db");
+const Comentario = require("./comentario.model");
 
 //requerimos el modelo de productos
 const Producto = require('./productos.model');
@@ -26,6 +27,15 @@ Usuario.hasMany(Producto, {
 });
 
 Producto.belongsTo(Usuario, {
+    foreignKey: 'usuarioId'
+})
+
+Usuario.hasMany(Comentario, {
+    foreignKey: 'usuarioId',
+    onDelete: 'CASCADE'
+})
+
+Comentario.belongsTo(Usuario, { 
     foreignKey: 'usuarioId'
 })
 
