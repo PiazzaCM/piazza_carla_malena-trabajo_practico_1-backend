@@ -1,4 +1,4 @@
-# segundoparcial
+
 ## clonar el repositorio
 ## ubicarse en la carpeta que contenga los package y en la consola escribir el comando "npm i" para instalar las dependencias
 ## crear la carpeta .env e ingresar los siguientes datos:
