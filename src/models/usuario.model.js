@@ -1,5 +1,7 @@
 //requerimos la bd
 const { sequelize, DataTypes } = require("../db/db");
+
+//requerimos el modelo de comentarios
 const Comentario = require("./comentario.model");
 
 //requerimos el modelo de productos

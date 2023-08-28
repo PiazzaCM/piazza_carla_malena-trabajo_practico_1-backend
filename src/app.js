@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //requerimos las rutas
 app.use(require('./src/routes/usuarios.routes'));
 app.use(require('./src/routes/productos.routes'))
-
+app.use(require('./src/routes/comentarios.routes'))
 
 
 
