@@ -2,7 +2,7 @@
 const { sequelize, DataTypes } = require("../db/db");
 
 //requerimos el modelo de comentarios
-const Comentario = require("./comentario.model");
+const Comentario = require("./comentarios.model");
 
 //requerimos el modelo de productos
 const Producto = require('./productos.model');

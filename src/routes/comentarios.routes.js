@@ -1,5 +1,5 @@
 //requerimos los controles de comentarios
-const { obtenerComentarios, crearComentario, editarComentario, eliminarComentario, eliminarComentario } = require('../controllers/comentarios.controller');
+const { obtenerComentarios, crearComentario, editarComentario, eliminarComentario } = require('../controllers/comentarios.controller');
 const validarUsuario = require('../middlewares/validarUsuario');
 const comentarioValida = require('../validator/comentario.valida');
 

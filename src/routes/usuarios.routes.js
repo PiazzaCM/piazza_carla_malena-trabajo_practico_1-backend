@@ -2,7 +2,7 @@ const router = require('express').Router();
 const usuarioValida = require('../validator/usuario.valida');
 
 //requerimos los controles de usuario
-const { login, crearUsuario } = require('../controllers/usuarios.controller');
+const { login, crearUsuario } = require('../controllers/usuarios.controllers');
 
 //ruta de registrar
 router.post('/register',usuarioValida, crearUsuario);
